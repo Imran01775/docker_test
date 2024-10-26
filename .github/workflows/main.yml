@@ -25,7 +25,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: .github/workflows/main  # Path to the Dockerfile
+          file: ./.github/workflows/main  # Path to the Dockerfile
           target: build
           load: true
 
@@ -33,7 +33,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: .github/workflows/main  # Path to the Dockerfile
+          file: ./.github/workflows/main  # Path to the Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
           target: final
