@@ -24,16 +24,16 @@ jobs:
       - name: Build and test
         uses: docker/build-push-action@v6
         with:
-          context: .
-          file: ./.github/workflows/main  # Path to the Dockerfile
+          context: .                        # Set to root directory or specific path if different
+          file: ./.github/workflows/main     # Updated path to your Dockerfile
           target: build
           load: true
 
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: .
-          file: ./.github/workflows/main  # Path to the Dockerfile
+          context: .                        # Set to root directory or specific path if different
+          file: ./.github/workflows/main     # Updated path to your Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
           target: final
