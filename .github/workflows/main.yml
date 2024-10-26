@@ -23,8 +23,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           file: .github/workflows/main
-        with:
-          file: .github/workflows/main
           target: build
           load: true
       - name: Build and push
