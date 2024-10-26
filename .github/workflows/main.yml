@@ -12,18 +12,23 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
+          file: .github\workflows
           username: ${{ vars.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
+        with: 
+          file: .github\workflows
       - name: Build and test
         uses: docker/build-push-action@v6
         with:
+          file: .github\workflows
           target: build
           load: true
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
+          file: .github\workflows
           platforms: linux/amd64,linux/arm64
           push: true
           target: final
