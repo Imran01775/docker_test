@@ -25,7 +25,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .                        # Set to root directory or specific path if different
-          file: ./.github/workflows/main.yml    # Updated path to your Dockerfile
+          file: ./.github/workflows/Dockerfile.main    # Updated path to your Dockerfile
           target: build
           load: true
 
@@ -33,7 +33,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .                        # Set to root directory or specific path if different
-          file: ./.github/workflows/main.yml     # Updated path to your Dockerfile
+          file: ./.github/workflows/Dockerfile.main     # Updated path to your Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
           target: final
