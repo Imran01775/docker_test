@@ -24,16 +24,16 @@ jobs:
       - name: Build and test
         uses: docker/build-push-action@v6
         with:
-          context: ./.github/workflows                 # Updated context to point to Dockerfile location
-          dockerfile: ./.github/workflows/dotnet.yml                     # Specify the Dockerfile name
+          context: .github/workflows                # Path to the directory containing the Dockerfile
+          file: dotnet.yml                          # Correct parameter for Dockerfile name
           target: build
           load: true
 
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: .                 # Updated context to point to Dockerfile location
-          dockerfile: ./.github/workflows/dotnet.yml                     # Specify the Dockerfile name
+          context: .github/workflows                # Path to the directory containing the Dockerfile
+          file: dotnet.yml                          # Correct parameter for Dockerfile name
           platforms: linux/amd64,linux/arm64
           push: true
           target: final
