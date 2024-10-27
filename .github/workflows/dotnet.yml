@@ -24,17 +24,15 @@ jobs:
       - name: Build and test
         uses: docker/build-push-action@v6
         with:
-          context: .                                   # Use root directory if Dockerfile is here
-          file: Dockerfile                             # Adjust if Dockerfile is in a specific folder
-          target: build
+          context: .                              # Use root directory if Dockerfile is here
+          file: Dockerfile                        # Ensure this points to your Dockerfile
           load: true
 
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: .                                   # Use root directory if Dockerfile is here
-          file: Dockerfile                             # Adjust if Dockerfile is in a specific folder
+          context: .                              # Use root directory if Dockerfile is here
+          file: Dockerfile                        # Ensure this points to your Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          target: final
           tags: ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
