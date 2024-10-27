@@ -24,7 +24,7 @@ jobs:
       - name: Build and test
         uses: docker/build-push-action@v6
         with:
-          context: .github/workflows                 # Updated context to point to Dockerfile location
+          context: ./.github/workflows                 # Updated context to point to Dockerfile location
           dockerfile: dotnet.yml                     # Specify the Dockerfile name
           target: build
           load: true
@@ -32,7 +32,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: .github/workflows                 # Updated context to point to Dockerfile location
+          context: ./.github/workflows                 # Updated context to point to Dockerfile location
           dockerfile: dotnet.yml                     # Specify the Dockerfile name
           platforms: linux/amd64,linux/arm64
           push: true
